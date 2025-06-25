@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades 07</title>
+  </head>
+  <body>
+    <script>
+      /*1. Criar e Adicionar Pares Chave-Valor no Map: Crie um Map chamado
+      livros e adicione nele três pares de chave-valor, onde a chave é o
+      título do livro e o valor é o autor.
+      2. Acessar Valor no Map: Acesse o valor associado a uma das chaves no
+      Map livros que você criou e imprima o nome do autor.
+      3. Iterar Sobre um Map: Use um loop for...of para iterar sobre o Map
+      livros e imprimir todos os pares chave-valor.
+      4. Usando Métodos do Map: size, delete, has: No seu Map livros, use o
+      método size para imprimir o número de livros, delete para remover um
+      livro pelo título e has para verificar se um livro ainda está no Map.
+      5. Map com Tipos de Chaves Diferentes: Crie um Map chamado colecao
+      que contém diferentes tipos de chaves (como string, number, object)
+      e seus respectivos valores
+      */
+      let livros = new Map();
+
+      livros.set("Titanic", "Pedro Alvarez");
+      livros.set("King Kong", "Cleiton Rasta");
+      livros.set("Filho do dono", "Oruam");
+
+      console.log(livros.get("Titanic"));
+
+      for (let [chave, valor] of livros) {
+        console.log(`${chave}: ${valor}`);
+      }
+      console.log("A quantidade de livros é: ", livros.size);
+      livros.delete("Titanic");
+      console.log(livros.has("Titanic"));
+
+      let objeto = {
+        cor: "preto",
+        tamanho: "pequeno",
+      };
+
+      let colecao = new Map();
+
+      colecao.set("String", "Vandelei");
+      colecao.set("Number", 23);
+      colecao.set("Object", Object(objeto));
+
+      for (let [chave, valor] of colecao) {
+        console.log(`${chave}: ${valor}`);
+      }
+    </script>
+  </body>
+</html>
