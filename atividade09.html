@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 09</title>
+  </head>
+  <body>
+    <script>
+      let frutas = new Set();
+
+      frutas.add("banana");
+      frutas.add("morango");
+      frutas.add("uva");
+      frutas.add("banana");
+
+      console.log(frutas);
+
+      console.log(frutas.has("banana"));
+
+      frutas.delete("banana");
+
+      frutas.clear();
+
+      console.log(frutas);
+
+      let numeros = new Set();
+
+      numeros.add(1);
+      numeros.add(2);
+      numeros.add(3);
+      numeros.add(4);
+      numeros.add(5);
+
+      console.log(numeros.size);
+
+      for (let sequencia of numeros) {
+        console.log(sequencia);
+      }
+
+      let duplicados = [1, 1, 2, 2, 3, 3, 4, 4];
+      let unicos = new Set(duplicados);
+      console.log([...unicos]);
+    </script>
+  </body>
+</html>
