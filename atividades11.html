@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades 11</title>
+  </head>
+  <body>
+    <script>
+      /*
+                                      1. Criando um Convite: Use a concatenação de strings para criar um
+                              convite. Inclua o nome do destinatário, o tipo de evento e a data, usando
+                              variáveis.
+                              */
+
+      let nomeDestinatario = "Vanderlei Lópes de Medeiros";
+      let tipoEvento = "Casamento";
+      let data = "23/01/2027";
+
+      console.log(
+        "Olá " +
+          nomeDestinatario +
+          " , espero que aceite nosso convite para o " +
+          tipoEvento +
+          " na data " +
+          data
+      );
+
+      /*
+                              2. Diário de Bordo: Escreva um pequeno diário de bordo usando template
+                              literals, incluindo data, local e uma descrição do que aconteceu no dia.
+                              */
+
+      let data1 = "23/01/2023";
+      let local = "Joinville";
+      let descricao =
+        "Bom dia! Apenas informando sobre a noticia que ocorreu na data: " +
+        data1 +
+        " que atingiu o municipio de " +
+        local;
+
+      console.log(descricao);
+
+      /*
+                                3. Redator de Notícias: Crie uma string que represente uma notícia,
+                        utilizando o método replace() para substituir um fato errado por um
+                        correto.
+                        */
+
+      let noticia =
+        "Então retornando na ultima noticia que rolou na cidade de Joinville no ano de 2024";
+      let correcaoNoticia = noticia.replace("2024", "2025");
+
+      console.log(correcaoNoticia);
+
+      /*
+                        4. Caixa de Comentários: Use o método trim() para limpar os
+                  comentários dos usuários antes de publicá-los em um blog ou fórum.
+                  */
+
+      let textoComEspacos = "  Olá,mundo!   ";
+      let textoSemEspacos = textoComEspacos.trim();
+      console.log(textoSemEspacos);
+
+      /*
+                  5. Carta para um Amigo: Utilize \\n para formatar uma carta para um
+            amigo, com saudação, corpo da mensagem e despedida, cada um em
+            uma nova linha.
+            */
+
+      let saudação = "Bom dia! Saudaçoes\n";
+      let corpoMensagem =
+        "Tenho prazer em te convidar para ser padrinho do meu casamento!\n";
+      let despedida =
+        "Qualquer dúvida, referente aos detalhes favor informar!\n";
+
+      console.log(saudação + corpoMensagem + despedida);
+
+      /*
+            6. Citações Famosas: Crie uma string que inclua uma citação famosa de
+      uma pessoa, utilizando caracteres de escape para incluir aspas na
+      citação.
+      */
+
+      let citacao =
+        'Conforme já citado por um grande criador da sua epoca "O único modo de fazer um excelente trabalho é amar o que você faz."';
+
+      console.log(citacao);
+    </script>
+  </body>
+</html>
