@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 12</title>
+
+    <script>
+      /*
+                                1. Criando uma Lista de Compras: Use o operador spread para combinar
+                        dois arrays de itens de supermercado em uma lista de compras.
+                        */
+
+      let listaFrutas = ["Banana", "Maça", "Uva"];
+      let listaCarnes = ["Frango", "Carne Bovina", "Carne Suína"];
+
+      let listaCompleta = [...listaFrutas, ...listaCarnes];
+
+      for (let i = 0; i < listaCompleta.length; i++) {
+        listaCompleta[i];
+        console.log(listaCompleta[i]);
+      }
+
+      /*
+                        2. Atualizando um Perfil de Usuário: Crie um objeto usuario com
+                  propriedades como nome e email. Use o operador spread para criar um
+                  novo objeto com os dados do usuário e uma propriedade adicional
+                  status.
+                  */
+
+      class usuario {
+        constructor(nome, email) {
+          this.nome = nome;
+          this.email = email;
+        }
+
+        exibir() {
+          let status = "Ativo";
+          console.log("Segue dados do usuario\n");
+          console.log("\nNome: " + this.nome);
+          console.log("\nE-mail: " + this.email);
+          console.log("\nStatus:" + status);
+        }
+      }
+
+      let usuario1 = new usuario("Vand", "vanderlei@gmail.com");
+
+      usuario1.exibir();
+
+      /*
+                  3. Festa de Aniversário: Crie uma função que aceita um número variável
+            de nomes e os imprime como lista de convidados para uma festa de
+            aniversário, usando o operador spread para coletar os nomes.
+            */
+
+      class lista {
+        constructor(nomes) {
+          this.nomes = nomes;
+        }
+
+        exibirLista() {
+          for (let i = 0; i < this.nomes.length; i++) {
+            console.log("Nome: " + this.nomes[i]);
+          }
+        }
+      }
+
+      let listaConvidados = ["Vand", "Kevin"];
+      let nomes = new lista([...listaConvidados, "João", "Pedro"]);
+
+      nomes.exibirLista();
+
+      /*
+          4 -  Clonando um Array de Músicas: Dado um array de músicas, crie uma
+      cópia do array usando o operador spread. Altere um elemento no array
+      copiado e verifique se o array original permanece inalterado.
+      */
+
+      let musicas = [
+        "Tem sabor de mel",
+        "Flor e o beija Flor",
+        "Sapo na lagoa",
+      ];
+      let copMusicas = [...musicas];
+      let editCopia = [...copMusicas, ([copMusicas[0]] = "A pomba branca")]; // falta resolver
+
+      console.log(editCopia);
+    </script>
+  </head>
+  <body></body>
+</html>
