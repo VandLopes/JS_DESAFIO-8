@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio JS 02</title>
+  </head>
+  <body>
+    <script>
+      /*
+                    Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
+            */
+
+      function soma(num1, num2) {
+        return num1 + num2;
+      }
+
+      let resultado = soma(2, 2);
+
+      /*
+                   Declare uma variável que receba a invocação da função criada acima,
+            passando dois números quaisquer por argumento, e somando `5` ao resultado
+            retornado da função.
+            */
+      console.log(resultado + 5);
+
+      /*
+             Declare uma nova variável, sem valor.
+             */
+
+      let semValor = null;
+
+      /*
+            Crie uma função que adicione um valor à variável criada acima, e retorne a
+      string:
+      O valor da variável agora é VALOR.
+      Onde VALOR é o novo valor da variável.
+      */
+
+      function adicionaValor(string) {
+        return (semValor = string);
+      }
+
+      console.log(adicionaValor("Valor"));
+    </script>
+  </body>
+</html>
