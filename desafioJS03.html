@@ -56,7 +56,7 @@
       */
 
       let pessoa = {
-        nome: "Vand",
+        nome: "Vanderlei",
         sobrenome: "Lopes",
         sexo: "Masculino",
         idade: 23,
@@ -65,19 +65,48 @@
         andando: false,
         caminhouQuantosMetros: 0,
 
-        fazerAniversario: function (idade) {
-          idade = +1;
+        fazerAniversario: function () {
+          return (this.idade += 1);
         },
 
         andar: function (quantidadeMetrosCaminhados) {
-          andando = true;
-          caminhouQuantosMetros = +quantidadeMetrosCaminhados;
+          return (
+            (this.andando = true),
+            (this.caminhouQuantosMetros += quantidadeMetrosCaminhados)
+          );
         },
 
         parar: function (andando) {
-          andando = false;
+          this.andando = false;
+        },
+
+        nomeCompleto: function () {
+          return this.nome + " " + this.sobrenome;
+        },
+
+        mostrarIdade: function () {
+          return this.idade;
+        },
+
+        mostrarPeso: function () {
+          return this.peso;
+        },
+
+        mostrarAltura: function () {
+          return this.altura;
         },
       };
+
+      console.log(pessoa.nomeCompleto());
+      console.log(pessoa.mostrarIdade());
+      console.log(pessoa.mostrarPeso());
+      console.log(pessoa.mostrarAltura());
+      console.log(pessoa.fazerAniversario());
+      console.log(pessoa.fazerAniversario());
+      console.log(pessoa.fazerAniversario());
+      console.log(pessoa.andar(10));
+      console.log(pessoa.andar(2));
+      console.log(pessoa.andar(8));
     </script>
   </body>
 </html>
