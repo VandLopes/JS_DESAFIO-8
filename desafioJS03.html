@@ -8,62 +8,62 @@
   <body>
     <script>
       /*
-                        / Declarar uma variável qualquer, que receba um objeto vazio.
-                        */
+                              / Declarar uma variável qualquer, que receba um objeto vazio.
+                              */
 
       let objeto = {};
 
       /*
-                          Declarar uma variável `pessoa`, que receba suas informações pessoais.
-                          As propriedades e tipos de valores para cada propriedade desse objeto devem
-                          ser:
-                          - `nome` - String
-                          - `sobrenome` - String
-                          - `sexo` - String
-                          - `idade` - Number
-                          - `altura` - Number
-                          - `peso` - Number
-                          - `andando` - Boolean - recebe "falso" por padrão
-                          - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
+                                Declarar uma variável `pessoa`, que receba suas informações pessoais.
+                                As propriedades e tipos de valores para cada propriedade desse objeto devem
+                                ser:
+                                - `nome` - String
+                                - `sobrenome` - String
+                                - `sexo` - String
+                                - `idade` - Number
+                                - `altura` - Number
+                                - `peso` - Number
+                                - `andando` - Boolean - recebe "falso" por padrão
+                                - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
+                              */
+
+      /*
+                              Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O
+                        método deve
+                        alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez
+                        que
+                        for chamado.
                         */
 
       /*
-                        Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O
-                  método deve
-                  alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez
-                  que
-                  for chamado.
-                  */
+                        Adicione um método ao objeto `pessoa` chamado `andar`, que terá as
+                  seguintes
+                  características:
+                  - Esse método deve receber por parâmetro um valor que representará a
+                  quantidade
+                  de metros caminhados;
+                  - Ele deve alterar o valor da propriedade `caminhouQuantosMetros`, somando
+                  ao
+                  valor dessa propriedade a quantidade passada por parâmetro;
+                  - Ele deverá modificar o valor da propriedade `andando` para o valor
+                  booleano que representa "verdadeiro";
+                    */
 
       /*
-                  Adicione um método ao objeto `pessoa` chamado `andar`, que terá as
-            seguintes
-            características:
-            - Esse método deve receber por parâmetro um valor que representará a
-            quantidade
-            de metros caminhados;
-            - Ele deve alterar o valor da propriedade `caminhouQuantosMetros`, somando
-            ao
-            valor dessa propriedade a quantidade passada por parâmetro;
-            - Ele deverá modificar o valor da propriedade `andando` para o valor
-            booleano que representa "verdadeiro";
-              */
-
-      /*
-              Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o
-      valor
-      da propriedade `andando` para o valor booleano que representa "falso".
-      */
+                    Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o
+            valor
+            da propriedade `andando` para o valor booleano que representa "falso".
+            */
 
       let pessoa = {
-        nome: "Vanderlei",
+        nome: " Angelica",
         sobrenome: "Lopes",
-        sexo: "Masculino",
-        idade: 23,
+        sexo: "Feminino",
+        idade: 1,
         altura: 165,
         peso: 81,
         andando: false,
-        caminhouQuantosMetros: 0,
+        caminhouQuantosMetros: 1,
 
         fazerAniversario: function () {
           return (this.idade += 1);
@@ -77,7 +77,7 @@
         },
 
         parar: function (andando) {
-          this.andando = false;
+          return (this.andando = false);
         },
 
         nomeCompleto: function () {
@@ -95,8 +95,48 @@
         mostrarAltura: function () {
           return this.altura;
         },
-      };
 
+        apresentacao: function () {
+          let sexo;
+          let ano;
+          let metragem;
+
+          if (pessoa.sexo == "Feminino") {
+            sexo = "a";
+          } else if (pessoa.sexo == "Masculino") {
+            sexo = "o";
+          }
+
+          if (pessoa.idade == 1) {
+            ano = "ano";
+          } else if (pessoa.idade != 1) {
+            ano = "anos";
+          }
+
+          if (pessoa.caminhouQuantosMetros == 1) {
+            metragem = "metro";
+          } else if (pessoa.caminhouQuantosMetros != 1) {
+            metragem = "metros";
+          }
+          return console.log(
+            "Olá, eu sou " +
+              sexo +
+              pessoa.nomeCompleto() +
+              ", tenho " +
+              pessoa.mostrarIdade() +
+              " " +
+              ano +
+              ", meu peso é " +
+              pessoa.mostrarPeso() +
+              ", só hoje, eu já caminhei " +
+              pessoa.caminhouQuantosMetros +
+              " " +
+              metragem +
+              "!"
+          );
+        },
+      };
+      pessoa.apresentacao();
       console.log(pessoa.nomeCompleto());
       console.log(pessoa.mostrarIdade());
       console.log(pessoa.mostrarPeso());
@@ -107,6 +147,9 @@
       console.log(pessoa.andar(10));
       console.log(pessoa.andar(2));
       console.log(pessoa.andar(8));
+      console.log(pessoa.andando);
+      console.log(pessoa.parar());
+      console.log(pessoa.caminhouQuantosMetros);
     </script>
   </body>
 </html>
