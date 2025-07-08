@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio JS04</title>
+  </head>
+  <body>
+    <script>
+      let isTruthy = function (valor) {
+        return !!valor;
+      };
+
+      // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
+      console.log(isTruthy(""));
+      console.log(isTruthy(0));
+      console.log(isTruthy(null));
+      console.log(isTruthy(undefined));
+      console.log(isTruthy(NaN));
+      console.log(isTruthy(false));
+
+      /*
+            Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
+            */
+
+      console.log(isTruthy(true));
+      console.log(isTruthy(1));
+      console.log(isTruthy([]));
+      console.log(isTruthy("a"));
+      console.log(isTruthy({}));
+      console.log(isTruthy(-7));
+      console.log(isTruthy(Infinity));
+      console.log(isTruthy("0"));
+      console.log(isTruthy(new Date()));
+      console.log(isTruthy("false"));
+
+      /*
+                  Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
+            seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
+            - `marca` - String
+            - `modelo` - String
+            - `placa` - String
+            - `ano` - Number
+            - `cor` - String
+            - `quantasPortas` - Number
+            - `assentos` - Number - cinco por padrão
+            - `quantidadePessoas` - Number - zero por padrão
+
+            */
+
+      let carro = {
+        marca: "Ford",
+        modelo: "Ka",
+        placa: "AFB854",
+        ano: 2023,
+        cor: "Branco",
+        quantasPortas: 4,
+        assentos: 5,
+        quantidadePessoas: 0,
+      };
+
+      /*
+            Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
+            passado por parâmetro.
+
+            */
+
+      carro.mudarCor = function (novaCor) {
+        this.cor = novaCor;
+      };
+
+      /*
+            Crie um método chamado `obterCor`, que retorne a cor do carro.
+            */
+
+      carro.obterCor = function () {
+        return this.cor;
+      };
+
+      /*
+            Crie um método chamado `obterModelo` que retorne o modelo do carro
+            */
+
+      carro.obterModelo = function () {
+        return this.modelo;
+      };
+
+      /*
+            Crie um método chamado `obterMarca` que retorne a marca do carro
+            */
+
+      carro.obterMarca = function () {
+        return this.marca;
+      };
+
+      /*
+            Crie um método chamado `obterMarcaModelo`, que retorne:
+            "Esse carro é um [MARCA] [MODELO]"
+            Para retornar os valores de marca e modelo, utilize os métodos criados.
+
+            */
+
+      carro.obterMarcaModelo = function () {
+        return console.log(
+          "Esse carro é um " + carro.obterMarca() + " " + carro.obterModelo()
+        );
+
+        let carro1 = carro.obterMarcaModelo();
+      };
+
+      carro.obterMarcaModelo();
+
+      /*
+      Crie um método que irá adicionar pessoas no carro. Esse método terá as
+      seguintes características:
+      - Ele deverá receber por parâmetro o número de pessoas entrarão no carro.
+      Esse
+      número não precisa encher o carro, você poderá acrescentar as pessoas aos
+      poucos.
+      - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
+      - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
+      deve retornar a frase: "O carro já está lotado!"
+      - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas
+      por
+      parâmetro for ultrapassar o limite de assentos do carro, então você deve
+      mostrar quantos assentos ainda podem ser ocupados, com a frase:
+      "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
+      - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
+      citado acima, no lugar de "pessoas".
+      */
+
+      carro.adicionarPessoas = function (pessoasEntraram) {
+        this.quantidadePessoas += pessoasEntraram;
+
+        let quantidadePessoasCabem = this.assentos - this.quantidadePessoas;
+
+        if (quantidadePessoasCabem <= 0) {
+          return console.log("O carro está cheio!");
+        } else if (pessoasEntraram > quantidadePessoasCabem) {
+          return console.log(
+            "So cabem mais " + quantidadePessoasCabem + " pessoas!"
+          );
+        }
+
+        return console.log(
+          "Já temos " + this.quantidadePessoas + " pessoas no carro!"
+        );
+      };
+
+      console.log(carro.obterCor());
+
+      carro.mudarCor("Vermelho");
+
+      console.log(carro.obterCor());
+
+      carro.mudarCor("verde musgo");
+
+      console.log(carro.obterCor());
+
+      carro.obterMarcaModelo();
+
+      carro.adicionarPessoas(1);
+      carro.adicionarPessoas(1);
+      carro.adicionarPessoas(1);
+      carro.adicionarPessoas(1);
+      carro.adicionarPessoas(1);
+    </script>
+  </body>
+</html>
